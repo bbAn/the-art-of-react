@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
-  constructor(props) { //constructor: 컴포넌트의 생성자 메서드. super(props)를 반드시 호출
-    super(props);
-
-    //state의 초기 value 설정하기. 객체 형식이어야함 값이 여러개 있을 수 있음
-    this.state = {
-      number: 0,
-      fixedNumber: 0
-    };
+  state = {
+    number: 0,
+    fixedNumber: 0
   }
 
   render() {
