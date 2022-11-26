@@ -1,13 +1,12 @@
 import React from 'react';
 
 function App() {
-  const name = '리액트';
-
-  return (
-    // <div>{name === '리액트' ? <h1>리액트입니다.</h1> : null}</div>
-    // 2.4.4 AND 연산자(&&)를 사용한 조건부 렌더링
-    <div>{name === '리액트' && <h1>리액트입니다.</h1>}</div>
-  );
+  // const name = undefined;
+  // return name || '값이 undefined입니다.';
+  
+  // name 값이 undefined일때 보여 주고 싶은 문구가 있다면
+  const name = undefined;
+  return <div> {name || '보여 주고 싶은 문구내용'}</div>;
 }
 
 export default App;
