@@ -7,15 +7,17 @@ class Counter extends Component {
 
     //state의 초기 value 설정하기. 객체 형식이어야함 값이 여러개 있을 수 있음
     this.state = {
-      number: 0
+      number: 0,
+      fixedNumber: 0
     };
   }
 
   render() {
-    const { number } = this.state; //state를 조회할 때는 this.state로 조회
+    const { number, fixedNumber } = this.state; //state를 조회할 때는 this.state로 조회
     return (
       <div>
         <h1>{number}</h1>
+        <h2>바뀌지 않는 값: { fixedNumber }</h2>
         <button
           // onClick를 통해 버튼이 클릭 되었을 때 호출할 함수를 지정함
           onClick={() => {
