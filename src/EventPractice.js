@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class EventPractice extends Component {
-
+  
   state = {
     message: ""
   }
@@ -23,7 +23,14 @@ class EventPractice extends Component {
             }
           }
         />
-
+        <button onClick={
+          () => {
+            alert(this.state.message);
+            this.setState({
+              message: ''
+            });
+          }
+        }>확인</button>
       </div>
     );
   }
