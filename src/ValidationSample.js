@@ -19,6 +19,7 @@ class ValidationSample extends Component {
       clicked: true,
       validated: this.state.password === '000'
     });
+    this.input.focus(); // 추가된 코드
   }
 
   render() {
@@ -29,6 +30,7 @@ class ValidationSample extends Component {
           value={this.state.password}
           onChange={this.handleChange}
           className={this.state.clicked ? (this.state.validated ? 'success' : 'failure') : ''} 
+          ref={(ref) => this.input=ref} // 추가된 코드
         />
         <button onClick={this.handleButtonClick}>검증하기</button>
       </div>
