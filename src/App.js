@@ -1,8 +1,8 @@
 import React from "react";
-import CounterHook from "./CounterHook";
+import Info from "./info";
 
 const App = () => {
-  return <CounterHook />
+  return <Info />
 }
 
 export default App;
