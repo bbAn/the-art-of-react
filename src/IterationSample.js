@@ -14,7 +14,7 @@ const IterationSample = () => {
 
   const onChange = e => setInputText(e.target.value);
   const onClick = () => {
-    const nextNames = names.concat({ // concat은 새로운 배열을 만들어줌. push는 기존 배열 자체를 변경함 (불변성 유지)
+    const nextNames = names.concat({ // concat은 새로운 배열을 만들어줌. push는 기존 배열 자체를 변경함
       id: nextId, // nextId 값을 id로 설정하고
       text: inputText
     });
@@ -22,8 +22,17 @@ const IterationSample = () => {
     setNames(nextNames); // names 값을 업데이트 한다.
     setInputText(''); // inputText를 비운다.
   }
-
-  const namesList = names.map(name => <li key={name.id}>{name.text}</li>);
+  const onRemove = id => {
+    const nextNames = names.filter(name => name.id !== id);
+    setNames(nextNames);
+  }
+  const namesList = names.map(name => ( // 추가 할 땐 없던 괄호가 생겼다.. 단순 코드 구분 때문인가.. 괄호가 없어도 실행은 된다
+    <li key={name.id} 
+    	onDoubleClick={() => onRemove(name.id)}
+    >
+      {name.text}
+    </li>
+  ));
   return (
     <>
       <input value={inputText} onChange={onChange} />
